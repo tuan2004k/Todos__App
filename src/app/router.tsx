@@ -14,6 +14,13 @@ export const createAppRouter = () =>
       },
     },
     {
+      path: paths.todos.path,
+      lazy: async () => {
+        const { default: TodosPage } = await import('./routes/todos/page')
+        return { element: <TodosPage /> }
+      },
+    },
+    {
       path: '*',
       lazy: async () => {
         const { default: NotFound } = await import('./routes/not-found')

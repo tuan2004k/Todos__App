@@ -9,10 +9,11 @@ export default defineConfig({
   base: './',
   plugins: [react(), tailwindcss(), viteTsconfigPaths()],
   server: {
-    port: 3000,
+    port: 5173,
+    host: 'localhost',
   },
   preview: {
-    port: 3000,
+    port: 5173,
   },
   optimizeDeps: { exclude: ['fsevents'] },
   build: {
